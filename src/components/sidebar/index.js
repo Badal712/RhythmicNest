@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./sidebar.css";
 import Logo from "../Image/Logo.png";
 import menu_White from "../Image/menu_White.png";
@@ -10,6 +10,7 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
 import { MdSpaceDashboard } from "react-icons/md";
 import { FaPlay } from "react-icons/fa";
+import apiClient from "../../spotify";
 
 export default function Sidebar() {
 
@@ -24,7 +25,7 @@ export default function Sidebar() {
     setIsCollapsed((prevState) => !prevState);
     toggleNameVisibility();
   };
-
+  
   return (
     <div className={`sidebar_container ${isCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebar_header">
