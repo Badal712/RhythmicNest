@@ -14,6 +14,15 @@ import apiClient from "../../spotify";
 
 export default function Sidebar() {
 
+  const [ image, setImage ] = useState(
+    {Logo}
+  );
+  useEffect(() => {
+    apiClient.get("me").then(response => {
+      setImage(response.data.images[0].url);
+    })
+  },[])
+
   const [isNameVisible, setIsNameVisible] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -39,7 +48,7 @@ export default function Sidebar() {
           }}
         />
         <div className="logo">
-          <img src={Logo} className="logoImg" alt="Logo" />
+          <img src={image} className="logoImg" alt="Logo" />
           {isNameVisible && (
             <a href="/" className="name">
               RhythmicNest
