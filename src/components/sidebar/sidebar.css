@@ -7,6 +7,7 @@
     justify-content: space-between;
     margin: 10px 0;
     transition: width 0.3s ease;
+    z-index: 1;
 }
 .sidebar_container.collapsed {
     width: 60px; 

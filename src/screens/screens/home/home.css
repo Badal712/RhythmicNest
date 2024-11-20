@@ -1,8 +1,10 @@
+
 .main_body{
     height:100vh;
     width:100vw;
     background-color: #222831;
     border-radius: 30px;
     display: flex;
-    overflow-x: hidden;
+    overflow: hidden;
+
 }
